@@ -13,9 +13,6 @@ conda_tools_env: tools
 tools_path:
   PATH: "{{ anaconda_path }}/envs/{{ conda_tools_env }}/bin:{{ anaconda_env['PATH'] }}"
 
-#Nextflow defauts
-nextflow_dest: "{{ sw_path }}/nextflow"
-
 # Name of the script that should be sourced from the user to get the
 # relevant environment variables setup. Perhaps move this to defaults vars.
 bash_env_common_script: sourceme_common.sh
