@@ -18,9 +18,7 @@ seqreports_nxf_logs: "{{ seqreports_data_path }}/nxf_logs/"
 seqreports_nf_profile: singularity,snpseq
 
 seqreports_config_root: "{{ ngi_pipeline_conf }}/seqreports/"
-seqreports_log_dir: "{{ ngi_pipeline_path }}/log/seqreports/"
 seqreports_log_path: "{{ seqreports_log_dir }}/seqreports-ws.log"
-seqreports_db_dir: "{{ ngi_pipeline_path }}/db/seqreports/"
 seqreports_db_path: "{{ seqreports_db_dir }}/seqreports.db"
 
 # When called from miarka, this is refering to the resource directory

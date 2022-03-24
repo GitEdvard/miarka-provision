@@ -15,11 +15,6 @@
     src: "templates/logger.config.j2"
     dest: "{{ seqreports_config_root }}/logger.config"
 
-- name: ensure seqreports log dir exists
-  file:
-    path: "{{ seqreports_log_dir }}"
-    state: directory
-
 - name: set log file path
   lineinfile:
     path: "{{ seqreports_config_root }}/logger.config"
@@ -27,12 +22,6 @@
     regexp: '(^\s+filename:).*'
     line: '\1 {{ seqreports_log_path }}'
     mode: "0644"
-
-- name: ensure seqreports db dir exists
-  file:
-    path: "{{ seqreports_db_dir }}"
-    state: directory
-    mode: u=rwx,g=rwx
 
 - name: modify Uppsala's supervisord conf to start sequencing-report-service
   ini_file:

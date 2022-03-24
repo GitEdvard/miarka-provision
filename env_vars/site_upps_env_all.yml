@@ -51,3 +51,5 @@ arteria_delivery_port: 10440
 
 # seqreports
 seqreports_service_port: 10460
+seqreports_db_dir: "{{ ngi_pipeline_path }}/db/seqreports/"
+seqreports_log_dir: "{{ ngi_pipeline_path }}/log/seqreports/"

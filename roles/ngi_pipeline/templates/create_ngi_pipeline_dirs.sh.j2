@@ -9,8 +9,7 @@
 # funk_004 -> ngi2016001
 # funk_006 -> ngi2016003
 
-if [ $# -ne 1 ]; then
-        echo "$0: usage: create_ngi_pipeline_dirs.sh <project id>"
+if [ $# -ne 1 ]; then echo "$0: usage: create_ngi_pipeline_dirs.sh <project id>"
         exit 1
 fi
 
@@ -34,11 +33,13 @@ mkdir -p "$FACILITY_PROJECT_PATH/nobackup/NGI/softlinks"
 
 #If case since folders are excessive for uppsala
 if [ $1 == "ngi2016003" ]; then
-mkdir -p "$FACILITY_PROJECT_PATH/genotype_data/incoming"
-mkdir -p "$FACILITY_PROJECT_PATH/genotype_data/archive"
-ACKNOWLEDGE_SITE="ACKNOWLEDGEMENTS_S.txt"
+    mkdir -p "$FACILITY_PROJECT_PATH/genotype_data/incoming"
+    mkdir -p "$FACILITY_PROJECT_PATH/genotype_data/archive"
+    ACKNOWLEDGE_SITE="ACKNOWLEDGEMENTS_S.txt"
 else
-ACKNOWLEDGE_SITE="ACKNOWLEDGEMENTS_U.txt"
+    ACKNOWLEDGE_SITE="ACKNOWLEDGEMENTS_U.txt"
+    mkdir -p "$FACILITY_PROJECT_PATH/private/db/seqreports"
+    mkdir -p "$FACILITY_PROJECT_PATH/private/log/seqreports"
 fi
 
 ln -s "{{ deployment_target }}/latest/sw/ngi_pipeline/DELIVERY.README.txt" "$FACILITY_PROJECT_PATH/nobackup/NGI/softlinks/DELIVERY.README.txt"
